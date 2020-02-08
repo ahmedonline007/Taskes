@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CRUDOperationTask.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="text-center text-uppercase">List of Product</h3>
+<p>
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.Category)</th>
+            <th>@Html.DisplayNameFor(m => m.Color)</th>
+            <th>@Html.DisplayNameFor(m => m.UnitPrice)</th>
+            <th>@Html.DisplayNameFor(m => m.AvailableQuantity)</th>            
+            <th>Action(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pro in Model)
+        {
+            <tr>
+                <td>@pro.Name</td>
+                <td>@pro.Category</td>
+                <td>@pro.Color</td>
+                <td>@pro.UnitPrice</td>
+                <td>@pro.AvailableQuantity</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = pro.ProductId }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Edit", "Edit", new { id = pro.ProductId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "Delete", new { id = pro.ProductId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>  

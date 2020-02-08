@@ -1,0 +1,44 @@
+﻿@model  CRUDOperationTask.Models.Product 
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="card" style="width:60%; margin:auto;">
+    <div class="card-header bg-dark text-white">
+        <h5>Product Details</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Name)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Name)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Category)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Category)</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Color)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Color)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.UnitPrice)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.UnitPrice)</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.AvailableQuantity)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.AvailableQuantity)</td> 
+            </tr>
+        </table>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Back to List", "Index", "", new { @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>
